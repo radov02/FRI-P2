@@ -1,0 +1,62 @@
+~ je absolutna pot do domačega imenika: /home/uporabniskoIme
+cel disk je viden kot direktorij
+gedit vsota.c &, da lahko še vedno uporabljamo terminal kljub temu da smo odprli gedit program (ali gedit vsota.c, ctrl Z, bg)
+Kako poganjamo c program:
+- ./a.out
+- echo 7 8 | ./a.out
+- cat test01.in | ./a.out
+- ./a.out < test01.out (s preusmeritvijo standardnega vhoda)
+- ./a.out < test01.in > test01.res
+	diff test01.res test01.out
+
+podroben pogled: ls -la
+
+spreminjanje dovoljenj:
+sudo chmod +x uporabnik1
+
+spreminjanje lastništva datotek/map:
+sudo chown -R uporabnik1 ./mapa1
+
+spreminjanje uporabnika:
+sudo su root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
