@@ -68,3 +68,5 @@ int main(){
 }
 ```
 rezultat: [0] zakaj?
+
+lahko vrne karkoli ker je nedefinirano
