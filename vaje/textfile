@@ -1,0 +1,12 @@
+~ je absolutna pot do domačega imenika: /home/uporabniskoIme
+cel disk je viden kot direktorij
+gedit vsota.c & da lahko še vedno uporabljamo terminal (ali gedit vsota.c, ctrl Z, bg)
+1. ./a.out
+2. echo 7 8 | a.out
+3. cat test01.in | ./a.out
+4. vhod podan v datoteki - način s preusmeritvijo standardnega vhoda:
+	./a.out < test01.out
+5. ./a.out < test01.in > test01.res
+	diff test01.res test01.out
+gcc pitagora.c -lm (če uporabljamo #inlcude <math.h>
+man sqrt
