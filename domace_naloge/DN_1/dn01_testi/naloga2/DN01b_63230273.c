@@ -9,7 +9,7 @@ int stevk(int stevilo){
 
 void izpisi(int potencaDvojke, bool vecKot){
 
-    if(potencaDvojke < 10 || (potencaDvojke == 9 && !vecKot)){
+    if(potencaDvojke < 10){
         if(vecKot && potencaDvojke < 9){
             putchar('0' + (potencaDvojke+1));
             return;

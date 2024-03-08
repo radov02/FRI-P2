@@ -9,4 +9,9 @@ gedit vsota.c & da lahko še vedno uporabljamo terminal (ali gedit vsota.c, ctrl
 5. ./a.out < test01.in > test01.res
 	diff test01.res test01.out
 gcc pitagora.c -lm (če uporabljamo #inlcude <math.h>
-man sqrt
+man sqrt (manual)
+
+testiranje z Makefile:
+sudo apt install make
+export name=<name_of_source_C_file>
+make ali make test
