@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int main(){
 
@@ -6,7 +7,7 @@ int main(){
     scanf("%d", &n);
 
     int trenutnaVsota = 0;
-    int najvecjaVsota = -1e9;
+    int najvecjaVsota = INT_MIN;    // najmanjsi int
 
     for(int i = 0; i < n; i++){
         int stevilo = -1;
