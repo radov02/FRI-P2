@@ -275,7 +275,9 @@ Pomagali si bomo še z bitnimi operacijami:<br>
 &   ... bitni AND
 |   ... bitni OR
 ^   ... bitni XOR
-~   ... bitni NOT
+~   ... bitni NOT (1'K)
+<<  ... bitni pomik v levo
+>>  ... bitni pomik v desno
 ```
 
 Kako pridobimo 1'K (eniški komplement) števila? Izvedemo bitni NOT nad dvojiškim številom.

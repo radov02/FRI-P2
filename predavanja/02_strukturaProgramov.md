@@ -1,9 +1,12 @@
 # Struktura programov v C-ju
 
 - komentarji: //, /* */
-/* a */
-/* a /* a */
-/* a /* a */ a */   komentar so prvi trije
+
+```/* a */```
+
+```/* a /* a */```
+
+```/* a /* a */ a */```   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;komentar so prvi trije
 
 - ukazi predprocesorja: #include (kar se začne z # ni del c-ja)
 c prevajalnik kliče predprocesor ki naredi drugačno datoteko (doda header file content itd.)in jo da prevajalniku
