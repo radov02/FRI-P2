@@ -19,6 +19,7 @@ int main(){     // NE dela
         for(int j = i; j < n; j++){
             vsota += zaporedje[j];
 
+
             if(vsota > maxVsota){
                 maxVsota = vsota;
             }
