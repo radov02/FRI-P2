@@ -14,7 +14,7 @@ gcc -o test01 test01.c tranzitivnost.c -lm
 #include "tranzitivnost.h"
 
 bool tranzitivna(int x, int y, int z){
-    printf("tran: %d, %d, %d; %d, %d, %d\n", f(x, y), f(y, z), f(x, z), x, y, z);
+    //printf("tran: %d, %d, %d; %d, %d, %d\n", f(x, y), f(y, z), f(x, z), x, y, z);
     if(f(x, y) && f(y, z)){
         return f(x, z);
     }
@@ -29,29 +29,24 @@ bool antitranzitivna(int x, int y, int z){
 }
 
 bool netranzitivna(int x, int y, int z){
-    return (f(x, y) && f(y, z) && f(x, z));
+    return (f(x, y) && f(y, z) && !f(x, z));
 }
 
 int tranzitivnost(int a, int b) {
 
     bool tranzitivnaf = true, antitranzitivnaf = true, netranzitivnaf = false;
 
-    for(int x = a; x <= b-2; x++){
-        for(int y = x+1; y <= b-1; y++){
-            for(int z = y+1; z <= b; z++){
-
-                printf("tr, atr, netr: %d, %d, %d\n", tranzitivna(x, y, z), antitranzitivna(x, y, z), netranzitivna(x, y, z));
+    for(int x = a; x <= b; x++){
+        for(int y = a; y <= b; y++){
+            for(int z = a; z <= b; z++){
 
                 if(tranzitivnaf && !(tranzitivna(x, y, z))){
-                    printf("prviif: %d, %d, %d; %d, %d, %d\n", f(x, y), f(y, z), f(x, z), x, y, z);
                     tranzitivnaf = false;
                 }
-                else if(antitranzitivnaf && !(antitranzitivna(x, y, z))){
-                    printf("drugiif: %d, %d, %d; %d, %d, %d\n", f(x, y), f(y, z), f(x, z), x, y, z);
+                if(antitranzitivnaf && !(antitranzitivna(x, y, z))){
                     antitranzitivnaf = false;
                 }
-                else if(!netranzitivnaf && netranzitivna(x, y, z)){
-                    printf("tretjiif: %d, %d, %d; %d, %d, %d\n", f(x, y), f(y, z), f(x, z), x, y, z);
+                if(!netranzitivnaf && netranzitivna(x, y, z)){
                     netranzitivnaf = true;
                 }
 
