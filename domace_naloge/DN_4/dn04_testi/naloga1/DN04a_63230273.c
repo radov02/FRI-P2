@@ -39,12 +39,10 @@ int main(){
                         ak_do_anm1 = false;
                     }
                 }
-                //printf("k = %d - %d\n", n, j);
                 if(ak_do_anm1) k = n - j;
             }
         }
     }
-    // printf("j: %d\n", j);
     if(j == 1) printf("%d\n", 0);
     else printf("%d\n", k);
 

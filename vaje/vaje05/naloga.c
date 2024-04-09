@@ -60,7 +60,10 @@ int main() {
     
     int array[] = {1, 2, 3, 4, 5};
     printf("%d\n", vsota(array, array + 4));
+<<<<<<< HEAD
 
+=======
+>>>>>>> adcdca2911f41dfb55a3dbd27c28c9b9bc02cb81
 
     return 0;
 }
