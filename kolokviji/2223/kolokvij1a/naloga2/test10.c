@@ -4,60 +4,7 @@
 #include "naloga2.h"
 
 char* NIZI[] = {
-    "Yo3",
-    "7M13UM5lGUI",
-    "Sku5jImEYCK",
-    "OqnFtAa2PFYJvUW9t",
-    "D125epM",
-    "uwhrfK_uf7bD8yDeH4",
-    "hA",
-    "yAoRnh",
-    "7WHsk0xFpAkAw659L",
-    "iJiVOmYOHNKfWNS",
-    "EEvADDWqpWFk8KhQ",
-    "vJMHt",
-    "9R1To8mcK9Wf_Asp4h",
-    "G_8",
-    "oVNArr9jCIMv2DxL",
-    "FdwrKNWsjR8wO",
-    "20",
-    "GHyYy",
-    "7qbh65Y8wBn2zVLV3",
-    "0csb7gldN3JF",
-    "czdXeFmP",
-    "G7SOyPQ21OQdvCA",
-    "2UxVf",
-    "WjZgs3uSqAq5",
-    "_FRRGBB8bvxQnM",
-    "tdlhE",
-    "gJPUvmqde",
-    "hYUBYift",
-    "xoxCg81krazGJ",
-    "62",
-    "LWHiZRuYW",
-    "oIaOhEyhZIH9Mqsq",
-    "HtOiwDnrJyH",
-    "ddyzstfPx5tLrYrO0",
-    "hHhQxff0miPBiA",
-    "1qt",
-    "8XeEqS",
-    "qDEE_oEVCC8nIzDc",
-    "FWHTr",
-    "rvBc1782o",
-    "zgfVkwOs7m8",
-    "3l",
-    "tzFtQYulSueiRmN",
-    "tWCRTtvvAjyGZ",
-    "m",
-    "aL4wgT6nMgV",
-    "8TZUlJbWUNkmedX",
-    "FdQAVhj",
-    "xdRNmbSfPN",
-    "6rl6cjlVequDnO4FR",
-    "nOqD",
-    "5",
-    "ShedFoW7",
-    "x1kq7C0D4Br8Z",
+    "NQSJdQV_OAjwSKkPkhHVsgwqU6YOUIVl9glkzMXbNh52R16FmO2qF5ZFfApuPY_rQU4TDD1ctSGcWzfkn5N8RS39GKe019S7YTIOcUSgGaDW0zJOgKCmLfk1JpN95bmDB10LnLZH4DozZQjpZBZ9vPOQJ5Y3rtk_hJt0k_HDr9_OIT_4Z7Wgn9PnMxT4lmsFwkzVk4OLmev7z6v1TFSdkZXV8LtedJ1aGIgQmPBy1AR56A3mwiOKed8WdT3uGU_NFPFG49Isut_dPHlYODCKHhJsGXagFQnl7SWtIfhWB4AfQG2KmrnZ4Qz4IwGpKNkn5sYhrmodAGwCLlIU7Sj9Z7lsWJYgQ6oEK0RVxujIuXOsBp9_scGBUeANqb7h_R3CMKAdkASWv_gM0zK1Hr_vA713LUILiREtLY40G4pI_iY3TsvvMbKZDTTc2WEoXXTtJuc1wAquhwXcgAFI8XKq3I1tbYFxGG2VKu",
 };
 
 int main() {
@@ -70,6 +17,5 @@ int main() {
         free(izhodni[i]);
     }
     free(izhodni);
-
     return 0;
 }

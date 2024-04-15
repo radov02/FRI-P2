@@ -17,10 +17,10 @@ int main() {
     }
 
     bool jePalindromsko = true;
-    int vsota = 0;
+    long vsota = 0l;
 
     for(int i = 0; i < n; i++){
-        if(i == (int)ceil(n/2) && jePalindromsko){
+        if(i == n/2 && jePalindromsko){
             vsota = 2 * vsota + zaporedje[i];
             break;
         }
@@ -32,11 +32,13 @@ int main() {
     }
 
     if(jePalindromsko){
-        printf("DA\n%d\n", vsota);
+        printf("DA\n%ld\n", vsota);
     }
     else {
-        printf("NE\n%d\n", vsota);
+        printf("NE\n%ld\n", vsota);
     }
+
+    free(zaporedje);
 
     return 0;
 }

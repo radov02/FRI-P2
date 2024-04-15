@@ -3,13 +3,16 @@
 kombinacija n števil od 0 ... k-1
 
 n = 3, k = 2
-0 0 0
-0 0 1
-0 1 0
-...
-1 1 1
 
-k<sub>n</sub> vrstic
+| | | |
+|---|---|---|
+|0|0|0|
+|0|0|1|
+|0|1|0|
+|.|.|.|
+|1|1|1|
+
+k<sup>n</sup> vrstic
 
 ```c
 // n = 1
@@ -41,9 +44,9 @@ void combs4(int *a, int k){
         a[3] = j; combs3(a, k);
     }
 }
-
-// SLIKA...
 ```
+
+<img src="20240405_084904.jpg" alt="20240405_084904.jpg" style="width:430px;"/>
 
 ```c
 void combs(int *a, int n, int k, int f){
@@ -67,11 +70,9 @@ combs(c, 7, 3, 7);    // 7 stolpcev, od 0 do 2, opravi 7 zank (ko je f = 0 samo 
 
 ```
 
-slika...
+<img src="20240405_093318.jpg" alt="20240405_093318.jpg" style="width:430px;"/>
 
 ### Permutacije n števil od 0 do n-1
-
-slika...
 
 ```c
 // klic: perms(c, 7, 0)
@@ -92,8 +93,11 @@ void perms1(int *a, int n; int f){
         }
     }
 }
+```
 
-// SLIKA ...
+<img src="20240405_095449.jpg" alt="20240405_095449.jpg" style="width:430px;"/>
+
+```c
 void perms2(int *a, int n, int f){
     if(f == n){ 
         // izpiši a
@@ -111,7 +115,11 @@ void perms2(int *a, int n, int f){
         }
     }
 }
+```
 
+<img src="20240405_103440.jpg" alt="20240405_103440.jpg" style="width:430px;"/>
+
+```c
 // tabelo globalno ali kot dodatni parameter
 // klic: perms3(c, 7, 0, 0lu)
 void perms3(int *a, int n, int f, long unsigned used){

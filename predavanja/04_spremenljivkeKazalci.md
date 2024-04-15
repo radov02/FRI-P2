@@ -132,12 +132,16 @@ printf("%d\n", *p); // izpis: 37 (vzame kazalec p, naslov ki je v njem shranjen,
 <img src="image-6.png" alt="image-6.png" style="width:250px;"/>
 
 
-
-
-
-### &a ... naslov od a
-### *p ... vrednost na naslovu, ki je shranjen v p
-### p ... vrednost naslova, na katerega kaže pointer
+```
+int* p ... kazalec na int
+int *(q[10]) ... kazalec na tabelo 10 intov
+int (*r)[10] ... tabela 10 kazalcev na int
+p ... naslov kjer je vrednost
+*p ... vrednost na naslovu p
+&p ... naslov kjer je shranjen naslov kjer je vrednost
+int* p = &a; ... enakovredno kot: int* p; p = &a;
+scanf("", NASLOV)
+```
 
 ```c
 int a = 37; // a = 37

@@ -32,12 +32,40 @@
 
 char** poStolpcih(char** nizi, int stVhodnih, int* stIzhodnih) {
 
+    int najdaljsi = 0;
     for(int i = 0; i < stVhodnih; i++){
-        *nizi[i]
+        int dolzina = strlen(nizi[i]);
+        if(dolzina > najdaljsi){
+            najdaljsi = dolzina;
+        }
     }
+    *stIzhodnih = najdaljsi;
 
+    char** tabela = calloc(*stIzhodnih, sizeof(char*));
 
-    return NULL;
+    for(int i = 0; i < *stIzhodnih; i++){ // 7x
+        
+        char* niztmp = calloc(stVhodnih, sizeof(char)); // za dodajanje črk
+        int niztmpindex = 0;
+        for(int j = 0; j < stVhodnih; j++){ // čez vse besede
+            if(strlen(nizi[j]) <= i){
+                continue;
+            }
+            niztmp[niztmpindex++] = nizi[j][i];
+        }
+
+        strncpy(niztmp, niztmp, niztmpindex);
+        tabela[i] = niztmp;
+    }
+    
+    /* for(int i = 0; i < *stIzhodnih; i++){
+        for(int j = 0; j < stVhodnih; j++){
+            printf("%c", tabela[i][j]);
+        }
+        printf("\n");
+    }  */
+
+    return tabela;
 }
 
 //=============================================================================
@@ -48,6 +76,7 @@ int main() {
     // "Ce "zelite funkcijo poStolpcih testirati brez testnih primerov,
     // dopolnite to funkcijo in prevedite datoteko na obi"cajen na"cin
     // (gcc naloga2.c).
+
     return 0;
 }
 

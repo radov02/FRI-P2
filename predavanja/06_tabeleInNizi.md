@@ -3,6 +3,7 @@
 ## Večdimenzionalne tabele
 
 int ... 32 bit
+
 void* ... 64 bit
 
 ```c
@@ -26,8 +27,7 @@ for(int i = 0; i < n; i++){
 }
 free(a);
 ```
-
-![alt text](20240329_083237.jpg)
+<img src="20240329_083237.jpg" alt="20240329_083237.jpg" style="width:430px;"/>
 
 ```c
 // 2 DIMENZIJI:
@@ -36,7 +36,7 @@ int n2;
 scanf("%d", &n1);
 scanf("%d", &n2);
 int **aa;   
-aa = (int**) malloc(n1 * sizeof(int*));
+aa = (int**) malloc(n1 * sizeof(int*)); // sizeof int*!!
 
 // aa ... tipa int**
 // aa[3] ... tipa int*
@@ -54,12 +54,11 @@ for(int i = 0;  i < n1; i++){
 }
 free(aa);
 ```
+<img src="20240329_084239-1.jpg" alt="20240329_084239-1.jpg" style="width:430px;"/>
 
-![alt text](20240329_084239-1.jpg)
+<img src="20240329_090255.jpg" alt="20240329_090255.jpg" style="width:430px;"/>
 
-![alt text](20240329_090255.jpg)
-
-![alt text](20240329_092643.jpg)
+<img src="20240329_092643.jpg" alt="20240329_092643.jpg" style="width:430px;"/>
 
 ```c
 int a[10];
@@ -75,8 +74,7 @@ int sum(int **a, int n1, int n2);   // NI V SKALDU Z ZGORNJO DEKLARACIJO
 int sum(int a[][10], int n1, int n2);
 int sum(int a[10][10], int n1, int n2); 
 ```
-
-![alt text](20240329_094413-1.jpg)
+<img src="20240329_095122.jpg" alt="20240329_095122.jpg" style="width:430px;"/>
 
 ```c
 int a[10][10][10];
@@ -99,8 +97,9 @@ a[-1] = 54; // gre na prejšnji a[0] .. na začetek alociranega prostora
 a--;
 a--;    // a zdaj kaže na prvotni a[-1] .. alocirani del lahko indeksiramo z 1, ..., 10
 ```
+<img src="20240329_103145.jpg" alt="20240329_103145.jpg" style="width:430px;"/>
 
-// slike...
+<img src="20240329_103805.jpg" alt="20240329_103805.jpg" style="width:430px;"/>
 
 ## Nizi
 

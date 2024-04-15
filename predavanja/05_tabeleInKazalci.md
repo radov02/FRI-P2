@@ -20,7 +20,7 @@ int *p = ´naslov´;   // pointer to address p which contains int
 
 int a = *p;  // value at address p
 
-int address = p;    // address of pointer *p
+int address = p;    // address stored in pointer p
 ```
 
 ## Tabele
@@ -30,6 +30,10 @@ int address = p;    // address of pointer *p
 primeri:
 
 <img src="20240322_085235.jpg" alt="20240322_085235.jpg" style="width:230px;"/>
+
+```
+array[2] ... enakovredno kot: *(array + 2)
+```
 
 ```c
 #include <stdio.h>
@@ -226,4 +230,10 @@ pa = (int*) malloc(100 * sizeof(int));  // malloc vrača void*; lahko tudi sizeo
 for(int i = 0; i < 100; i++){
     pa[i] = 0;
 }
+free(pa);
+```
+
+```c
+int *p = calloc(10, sizeof(int)); // calloc tudi inicializira
+free(p);
 ```

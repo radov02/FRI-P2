@@ -3,8 +3,6 @@
 int vsotaPravihDeliteljev(int stevilo){
     int vsota = 0;
 
-
-
     for(int i = 1; i*i <= stevilo; i++) {
         if(stevilo % i == 0){
             vsota += i;

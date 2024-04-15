@@ -4,7 +4,7 @@
 #include "naloga2.h"
 
 char* NIZI[] = {
-    "Danes",
+    "bBmSuRiPlP1fXkgF0lJkEcMd4R",
 };
 
 int main() {
@@ -17,6 +17,5 @@ int main() {
         free(izhodni[i]);
     }
     free(izhodni);
-
     return 0;
 }

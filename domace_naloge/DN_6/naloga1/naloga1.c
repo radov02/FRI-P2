@@ -28,7 +28,7 @@ char* zdruzi(char** nizi, char* locilo) {
         while(**nizi != '\0'){
             //printf("**nizi: %c\n", **nizi);
             novNiz[i] = **nizi;
-            (*nizi)++;  // NEPRAVILNO: **nizi++;
+            (*nizi)++;  // NEPRAVILNO: **nizi++; KER SE ŽELIMO PREMAKNITI NAPREJ ZA ČRKO (++ veže močneje)
             i++;
         }
 
@@ -40,7 +40,7 @@ char* zdruzi(char** nizi, char* locilo) {
                 i++;
             }
         }
-        *nizi++;
+        *nizi++;    // PREMIK NAPREJ NA DRUGO BESEDO (++ veže močneje)
         steviloBesed--;
     }
     novNiz[i] += '\0';

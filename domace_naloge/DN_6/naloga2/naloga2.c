@@ -42,7 +42,7 @@ int** ap2pp(int(*kazalec)[N], int izvornoStVrstic, int ciljnoStVrstic) {
 int (*pp2ap(int** kazalec, int izvornoStVrstic, int* ciljnoStVrstic))[N] {
     // pp2ap je ime funkcije
     // (int** kazalec, int izvornoStVrstic, int* ciljnoStVrstic) so parametri funkcije
-    // int (*...)[N] je tip funkcije
+    // int (*...)[N] je tip funkcije - vrača kazalec na int tabelo z N elementi
     int stElementov = 0;
     for(int i = 0; i < izvornoStVrstic; i++){
         int j = 0;

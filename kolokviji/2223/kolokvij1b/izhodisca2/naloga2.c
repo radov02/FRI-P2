@@ -31,8 +31,35 @@
 //=============================================================================
 
 char** naSredino(char** nizi, int ciljnaDolzina) {
-    // popravite / dopolnite ...
-    return NULL;
+    int nizov = 0;
+    for(int i = 0; nizi[i] != NULL; i++){
+        nizov++;
+    }
+    
+    char** tabela = calloc(nizov+1, sizeof(char*));
+    int i = 0;
+    for(;i < nizov; i++){
+        char* novniz = calloc(ciljnaDolzina + 1, sizeof(char));
+        int indeks = 0;
+        int dolzinaNiza = strlen(nizi[i]);
+        int pik = ciljnaDolzina - dolzinaNiza;
+        int desnihPik = pik/2;
+
+        for(int j = 0; j < desnihPik; j++){
+            novniz[indeks++] = '.';
+        }
+        for(int j = 0; j < dolzinaNiza; j++){
+            novniz[indeks++] = nizi[i][j];
+        }
+        for(int j = 0; j < pik - desnihPik; j++){
+            novniz[indeks++] = '.';
+        }
+        novniz[indeks] = '\0';
+        tabela[i] = novniz;
+    }
+    tabela[i] = NULL;
+
+    return tabela;
 }
 
 //=============================================================================

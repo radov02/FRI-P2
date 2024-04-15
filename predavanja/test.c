@@ -22,7 +22,7 @@ void f4(int *a){
 
 int main(){
 
-    int b = 10;
+    /* int b = 10;
     f(b);
     printf("%d\n", b);
     f2(&b);
@@ -33,7 +33,13 @@ int main(){
 
     f4(&b);
     f4(b);
-    printf("%d\n", b);  // vrne to kar je v a v funkciji f4 - to je naslov od b-ja
+    printf("%d\n", b);  // vrne to kar je v a v funkciji f4 - to je naslov od b-ja */
+
+    /* int first = 10; 
+    int second = 0; 
+    printf("sdagfs");
+    printf("[%d]\n", first / second); 
+    printf("konec"); */
 
     return 0;
 }
