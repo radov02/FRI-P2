@@ -1,14 +1,39 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int izpisi(int n, int k, int trenutnaVsota){
-    if(trenutnaVsota >= n){
-        return trenutnaVsota;
+// slika...
+void printnivo(int n){
+    for(int i = 0; i < n; i++){
+        printf("   ");
+    }
+}
+
+// TIPI in ČASOVNE OMEJITVE
+long MEMO[401][401];
+bool SMO_ZE[401][401];
+
+long stNacinov(int vsota, int najSumand, int nivo){
+
+    if(vsota == 0){
+        return 1;
+    }
+    if(vsota < 0 || najSumand <= 0){
+        return 0;
     }
 
-    for(int i = 1; i <= k; i++){
-        trenutnaVsota += i;
-        return izpisi(n, i, trenutnaVsota);
+    if(SMO_ZE[vsota][najSumand]){
+        return MEMO[vsota][najSumand];
     }
+
+    printf("nacini(%ld, %ld)\n", vsota - najSumand, najSumand);
+    long prvi = stNacinov(vsota - najSumand, najSumand, nivo+1);
+    printf("nacin(%ld, %ld)\n", vsota, najSumand-1);
+    long drugi = stNacinov(vsota, najSumand-1, nivo+1);
+
+    MEMO[vsota][najSumand] = prvi + drugi;
+    SMO_ZE[vsota][najSumand] = true;
+
+    return prvi + drugi;
 }
 
 int main(){
@@ -16,6 +41,8 @@ int main(){
 
     scanf("%d %d", &n, &k);
 
-    int rezultat = izpisi(n, k, 0);
-    printf("%d\n", rezultat);
+    long rezultat = stNacinov(n, k, 0);
+    printf("%ld\n", rezultat);
+
+    return 0;
 }
