@@ -5,33 +5,17 @@
 
 #define MAXki 42
 
-void izpisiNiz(char* niz, int length){
-    for(int i = 0; i < length; i++){
-        printf("%c", niz[i]);
-    }
-    printf("\n");
-    return;
-}
+void izpisiPermutacije(int i, char* permutacija, char** tabelaNizov, int n){
 
-void izpisiPermutacije(int i, int j, char* permutacija, char** tabelaNizov, int n){
-    
-    permutacija[i+1] = tabelaNizov[i+1][j];
-    izpisiNiz(permutacija, i+2);
-    printf(" %d, %d, %d\n", i+1 ,j, n);
-
-    if(i == n-2){
-        //izpisiNiz(permutacija, n);
-        printf("izpisiNIz\n");
+    if(i == n){
+        printf("%s\n", permutacija);
         return;
     }
 
-    int jj = 0;
-    while(tabelaNizov[i+1][jj] != '\0'){
-        izpisiPermutacije(i+1, jj, permutacija, tabelaNizov, n);
-        printf("vrnjeno\n");
-        jj++;
+    for(int j = 0; j < strlen(tabelaNizov[i]); j++){
+        permutacija[i] = tabelaNizov[i][j];
+        izpisiPermutacije(i+1, permutacija, tabelaNizov, n);
     }
-    return;
 }
 
 int main(){
@@ -52,7 +36,7 @@ int main(){
     }
 
     char* permutacija = calloc(n, sizeof(char));
-    izpisiPermutacije(-1, 0, permutacija, tabelaNizov, n);
+    izpisiPermutacije(0, permutacija, tabelaNizov, n);
 
     /* printf("\n");
     for(int i = 0; i < n; i++){
