@@ -89,7 +89,7 @@ int main(void)
 parameter je spremenljivka, argument je izraz
 
 ### Kontrolni stavki:
-- if-then-else
+- if-else
 - while-do
 - do-while
 - for

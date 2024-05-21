@@ -34,7 +34,7 @@ void combs2(int *a, int k){
 // n = 3
 void combs3(int *a, int k){
     for(int j = 0; j < k; j++){
-        a[2] = j; combs(a, k);
+        a[2] = j; combs2(a, k);
     }
 }
 

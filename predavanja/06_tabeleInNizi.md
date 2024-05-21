@@ -41,7 +41,7 @@ aa = (int**) malloc(n1 * sizeof(int*)); // sizeof int*!!
 // aa ... tipa int**
 // aa[3] ... tipa int*
 // aa[3][5] ... tipa int
-// a** vrednost na lokaciji kazalca *a
+// **a vrednost na lokaciji kazalca *a
 
 for(int i = 0; i < n1; i++){
     aa[i] = (int*) malloc(n2 * sizeof(int));

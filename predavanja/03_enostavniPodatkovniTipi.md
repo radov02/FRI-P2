@@ -326,6 +326,7 @@ int main(){
 ---
 DODATNO, KORISTNE OPERACIJE Z BITNIMI OPERATORJI
 ???
+
 Recimo da imamo dvojiško število: 01001010, potem bomo izvedli bitni OR z bitno negiranim številom:
 ```
 število:    01001010

@@ -15,7 +15,7 @@ Postavljanje 8 kraljic na šahovsko polje tako, da se ne napadajo
 
 ```c
 bool queens(int board[], int n, int q){     // q - številka kraljice oziroma vrstice
-    if(q == n){
+    if(q == n){     // ce smo ze postavili 8 kraljic
         // izpiši
         return true;
     }
@@ -120,7 +120,7 @@ void incstr(struct intarr arr){     // sprejmemo vrednost
 
 void incstrp(struct intarr* arr){   // sprejmemo naslov
     for(int i = 0; i < 100; i++){
-        (*arr).a[i] = (*arr).a[i] + 1;
+        (*arr).a[i] = (*arr).a[i] + 1;  // struktura se nanaša na vrednost na prvem naslovu, kjer je struktura alocirana
     }
 }
 
