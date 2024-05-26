@@ -7,7 +7,7 @@
 // kazalec je v bistvu naslov
 
 // &r ... naslov od r
-// r ... vrednost 
+// r ... shranjen naslov
 // *r ... vrednost na naslovu r
 // **r ... vrednost na naslovu *r
 
