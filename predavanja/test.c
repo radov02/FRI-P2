@@ -20,7 +20,27 @@ void f4(int *a){
     *a = &a + 1;
 }
 
+struct complex_c{
+    double x;
+    double y;
+};
+
+typedef struct node {
+	int value;
+	nodee* next;
+} nodee;
+
 int main(){
+
+    struct complex_c c1, c2, c3;    // spremenljivke so tipa struct complex_c
+    struct complex_c* c4;
+
+    c1.x = 1.2;
+    c4->x = -3.5;
+
+    FILE* dat = fopen("dat.txt", "wt");
+    FILE* dato = fopen("dat.txt", "rt");
+
 
     /* int b = 10;
     f(b);

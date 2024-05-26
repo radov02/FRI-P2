@@ -6,7 +6,14 @@ vrste:
 - tekstovne datoteke (lep izpis z npr. more)
 - binarne datoteke (nerazumljiv izpis)
 
-4 slike...
+<img src="20240510_084415.jpg" alt="20240510_084415.jpg" style="width:330px;"/>
+
+<img src="20240510_084422.jpg" alt="20240510_084422.jpg" style="width:330px;"/>
+
+<img src="20240510_084612.jpg" alt="20240510_084612.jpg" style="width:430px;"/>
+
+<img src="20240510_084710.jpg" alt="20240510_084710.jpg" style="width:430px;"/>
+
 (določiti je treba tip datoteke (tekst ali ne), endian - da bo ista predstavitev na drugih procesorjih - težave pri binarnih datotekah)
 težave pri tekstovnih datotekah: če imamo znake različne dolžine, int lahko zapišemo z različno znaki, pri double/float izpisujemo približke in ne točne vrednosti (kodiranje je večinoma dobro prenosljivo)
 
@@ -33,6 +40,16 @@ FILE* fopen(char* name, char* mode);    // mode: "r", "w", "a", ... (man fopen)
 int fclose(FILE* f);    // man fclose
 ```
 
+- načini dela z datoteko:
+  - ```r``` -> read
+  - ```w``` -> write
+  - ```a``` -> append
+  - ```r+``` -> read/write
+  - ```w+``` -> write/read
+  - ```a+``` -> append/read
+
+- če je f NULL, ni uspelo odpiranje datoteke
+
 ```c
 ...
 FILE* f;
@@ -49,7 +66,7 @@ if(is_ok != 0){
 }
 ```
 ```c
-// že odprte datoteke:
+// že odprte datoteke (zato lahko uporabljamo skrajšane oblike funkcij):
 FILE* stdin, stdout, stderr // prva na tipkovnico, ostali na zaslon
 
 fprintf(stdout, "formatniNiz", _, _, ..., _);
@@ -84,12 +101,12 @@ fread(board, sizeof(board), 1, f);
 fread(&n_queens, sizeof(n_queens), 1, f);
 ```
 
-- če želimo izpisati števila 7, 135, 22 (kot int):
-bin: 0 0 0 7 0 0 0 135 0 0 0 22
-txt: 55 \n 49 51 53 \n 50 50 \n (ASCII)
-- kako bi izpisali 3. število?
-bin: izračunamo (3-1)*sizeof(int)
-txt: gremo čez vse prejšnje
+- če želimo izpisati števila 7, 135, 22 (kot int):</br>
+**bin**: 0 0 0 7 0 0 0 135 0 0 0 22</br>
+**txt**: 55 \n 49 51 53 \n 50 50 \n (ASCII)</br>
+- kako bi izpisali 3. število?</br>
+**bin**: izračunamo (3-1)*sizeof(int)</br>
+**txt**: gremo čez vse prejšnje</br>
 
 ```c
 typedef struct node {

@@ -1,0 +1,2 @@
+
+void pretvori(int** t);

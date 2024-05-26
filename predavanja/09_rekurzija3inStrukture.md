@@ -58,10 +58,12 @@ struct complex_c{
 };
 
 int main(){
+    
     struct complex_c c1, c2, c3;    // spremenljivke so tipa struct complex_c
+    struct complex_c* c4;
 
     c1.x = 1.2;
-    c1.y = -3.5;
+    c4->x = -3.5;
 
     return 0;
 }
@@ -157,6 +159,7 @@ int main(){
     pc1.x = 1.2;  // NAROBE, ker je pc1 kazalec
 
     (*pc1).x = 1.2; // PRAVILNO (pc1 je kazalec/naslov, *pc1 je struktura)
+    pc1->x = 1.2;   // enakovredno zgornji vrstici
 
     return 0;
 }

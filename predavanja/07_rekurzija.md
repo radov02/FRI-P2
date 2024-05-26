@@ -1,5 +1,26 @@
 # Rekurzija
 
+```
+REKURZIJA (rekurzivno drevo, preiskovanje možnosti, ponavljanje istega postopka nad preostalo/manjšo množico elementov, potreba po izvajanju po principu sklada):
+
+// memoizacijska tabela
+// tabela oznak že memoiziranih vrednosti
+
+funkcija() {       // čim manj spreminjajočih parametrov ki jih je potrebno memoizirati (dimenzije memo tabele)
+    // ustavitveni pogoj(i)
+    
+    // (preverjanje memoizacije)
+    
+    // (izračuni)
+    
+    // korak(i) rekurzije (klic(i) same sebe)
+    
+    // (zapis v memoizacijsko tabelo)
+    
+    // vračanje
+}
+```
+
 kombinacija n števil od 0 ... k-1
 
 n = 3, k = 2

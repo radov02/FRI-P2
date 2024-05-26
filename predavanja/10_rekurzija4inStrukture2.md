@@ -4,7 +4,7 @@
 
 - n listkov, vsak ima na sebi vrednost v, ki je element naravnih števil
 - želimo da je na 2 kupih enaka vsota, če je to mogoče
-- z rekurzijo pregledamo vse kombinacije
+- z rekurzijo **pregledamo vse kombinacije**
 - naredimo vektor dolžine n
 - vzamemo število *unsigned long int*:
     - nums[] ... vrednosti na listkih
@@ -21,7 +21,7 @@ bool partition(int* nums, int n){
                 sum0 += nums[i];
             }
         }
-        int sum1 = 0;
+        int sum1 = 0;   // koliko je na desnem kupu
         for(int i = 0; i < n; i++){
             if((p & (1lu << i)) != 0){
                 sum1 += nums[i];
