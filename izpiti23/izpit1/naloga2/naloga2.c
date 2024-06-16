@@ -33,7 +33,7 @@ void izpisi(int* cleni, int indeksCleni, int trenutnaVsota, int clen, int globin
     }
     
     for(int i = clen; i <= n; i++){
-        if((trenutnaVsota + i <= n && globina <= b) /* || (trenutnaVsota + i == n) */){
+        if((trenutnaVsota + i <= n && globina <= b)){
             izpisi(cleni, indeksCleni+1, trenutnaVsota + i, i, globina+1, n, a, b);
         }
     }

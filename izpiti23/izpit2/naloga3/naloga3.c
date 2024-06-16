@@ -26,46 +26,54 @@
 // po potrebi dopolnite ...
 
 Vozlisce* diagonala(Vozlisce* start, int* vsota) {
-
-    Vozlisce* novSeznam = malloc(sizeof(Vozlisce));
-    Vozlisce* rezultatTrenutno = malloc(sizeof(Vozlisce));
-
-    Vozlisce* tmp = malloc(sizeof(Vozlisce));
-    tmp = start;
-    int j = 0;
-    while(tmp->desno != NULL){  // najdemo prvo vozlisce
-        j++;
-        tmp = tmp->desno;
+    Vozlisce* trenutnoVrstica = start;
+    int w = 0;
+    while(trenutnoVrstica != NULL){
+        w++;
+        trenutnoVrstica = trenutnoVrstica->desno;
     }
-    Vozlisce* kopiraj = malloc(sizeof(Vozlisce));
-    *vsota += tmp->vsebina;
-    kopiraj->vsebina = tmp->vsebina;
-    kopiraj->desno = tmp->desno;
-    kopiraj->dol = NULL;
-    novSeznam = kopiraj;
-    rezultatTrenutno = kopiraj;
 
-    if(start->dol != NULL){ // gremo v 2. vrstico
-        tmp = start->dol;
-    }
-    else{
-        return novSeznam;
-    }
-    while(tmp != NULL){
-        j--;
-        for(int i = 0; i < j; i++){
-            tmp = tmp->desno;
+    int vsotai = 0;
+
+    Vozlisce* rezultat = malloc(sizeof(Vozlisce));
+    bool zacetnoVozlisce = true;
+    Vozlisce* trenutnoVrezultatu = rezultat;
+    Vozlisce* trenutnoPremikjoce;
+    trenutnoVrstica = start;
+    while(trenutnoVrstica != NULL){
+        trenutnoPremikjoce = trenutnoVrstica;
+
+        for(int i = 0; i < w-1; i++){
+            trenutnoPremikjoce = trenutnoPremikjoce->desno;
+            // printf("trenutno->vsebina: %d\n", trenutno->vsebina);
         }
-        /* Vozlisce* kopija = malloc(sizeof(Vozlisce));
-        *vsota += tmp->vsebina;
-        kopija->vsebina = tmp->vsebina;
-        kopija->desno = NULL;
-        kopija->dol = NULL;
-        rezultatTrenutno->desno = kopija;
-        rezultatTrenutno = kopija; */
+        if(w == 0){
+            break;
+        }
+
+        if(zacetnoVozlisce){
+            trenutnoVrezultatu->vsebina = trenutnoPremikjoce->vsebina;
+            trenutnoVrezultatu->dol = NULL;
+            trenutnoVrezultatu->desno = NULL;
+            zacetnoVozlisce = false;
+        }
+        else{
+            Vozlisce* novo = malloc(sizeof(Vozlisce));
+            novo->dol = NULL;
+            novo->desno = NULL;
+            novo->vsebina = trenutnoPremikjoce->vsebina;
+            trenutnoVrezultatu->desno = novo;
+            trenutnoVrezultatu = novo;
+        }
+        vsotai += trenutnoVrezultatu->vsebina;
+
+        w--;
+        trenutnoVrstica = trenutnoVrstica->dol;
     }
 
-    return novSeznam;
+    *vsota = vsotai;
+
+    return rezultat;
 }
 
 //=============================================================================

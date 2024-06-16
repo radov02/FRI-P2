@@ -1,39 +1,47 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
-void zamenjaj(int* prvo, int* drugo, int* zaporedje){
+#define MAX_N 10
 
+int n, k, r;
+int zaporedje[MAX_N];
+
+bool jeUrejeno(int* zaporedje, int len){
+    int max = zaporedje[0];
+    for(int i = 1; i < len; i++){
+        if(zaporedje[i] <= max){
+            return false;
+        }
+    }
+    return true;
 }
 
-int nacinov(int kateroPodzaporedje, int* podzaporedje, int n, int stZamenjav, int r, int* zaporedje){
-    if(stZamenjav == 0){
-        return 0;
+int st_nacinov(int trenutno){
+
+    if(jeUrejeno(zaporedje, n)){
+        return 1;
     }
 
-    for(int i = 0; i < r; i++){
-        
+    int nacinov = 0;
+    for(int i = trenutno+r; i <= n-r; i++){
+        for(int j = )
+        nacinov += st_nacinov(i, n, k, r, zaporedje);
     }
 
-    strncpy(podzaporedje, zaporedje, r);
-    for(int i = kateroPodzaporedje+3; i <= n-3; i++){
-
-    }
+    return nacinov;
 }
 
 int main(){
 
-    int n, k, r;
     scanf("%d %d %d", &n, &k, &r);
-
-    int* zaporedje = malloc(n * sizeof(int));
     for(int i = 0; i < n; i++){
         scanf("%d", &zaporedje[i]);
     }
 
-    int stNacinov = nacinov(n, k, r, zaporedje);
+    int stNacinov = st_nacinov();
 
     printf("%d\n", stNacinov);
-
-    free(zaporedje);
 
     return 0;
 }

@@ -15,29 +15,60 @@
 #include <stdbool.h>
 #include <string.h>
 
-// po potrebi dopolnite ...
+#define MAX_N 15
 
-void izpisi(char** razbitja, int razbitjaIndex, char* niz, int n, int a, int b){
+void izpis(char* niz, int len, int* mejeRazbitij, int indeks){
 
-    
-    for(int i = 0; i < n; i++){
-        
+    for(int i = 0; i < len; i++){
+        printf("%c", niz[i]);
+        if(i < len-1){
+            for(int j = 0; j < indeks; j++){    // za|nk|a ... meje razbitij sta a in k (1 in 3)
+                if(i == mejeRazbitij[j]){
+                    printf("|");
+                    break;
+                }
+            }
+        }
+    }
+    printf("\n");
+}
+
+void izpisRazbitij(int trenutniZacetek, int* mejeRazbitij, int indeks, char* niz, int stRazbitij, int dolzinaNiza, int a, int b){
+
+    if(stRazbitij >= a){
+        mejeRazbitij[indeks++] = trenutniZacetek;
+        izpis(niz, dolzinaNiza, mejeRazbitij, indeks);
+        return;
     }
 
+    mejeRazbitij[indeks++] = trenutniZacetek;   // za njim izpisujemo |
+
+    for(int i = trenutniZacetek+1; i < dolzinaNiza; i++){
+        if(stRazbitij + 1 <= b){
+            izpisRazbitij(i, mejeRazbitij, indeks, niz, stRazbitij+1, dolzinaNiza, a, b);
+        }
+    }
 }
 
 int main() {
 
-    int n, a, b;
-    scanf("%d %d %d", &n, &a, &b);
-    char* niz = malloc(n*sizeof(char));
-    for(int i = 0; i < n; i++){
-        scanf("%s", &niz[i]);
+    char* niz = malloc(MAX_N * sizeof(char));
+    for(int i = 0; i < MAX_N; i++){
+        scanf("%c", &niz[i]);
+        if(niz[i] == ' '){
+            niz[i] = '\0';
+            break;
+        }
     }
+    int a, b;
+    scanf("%d %d", &a, &b);
 
+    int* mejeRazbitij = malloc((b-1)*sizeof(int));
+    int dolzinaNiza = strlen(niz);
 
-
-    free(niz);
+    for(int j = 0; j < dolzinaNiza-(a-1); j++){
+        izpisRazbitij(j, mejeRazbitij, 0, niz, 1, dolzinaNiza, a, b);
+    }
 
     return 0;
 }
