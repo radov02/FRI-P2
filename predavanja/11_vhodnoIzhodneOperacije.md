@@ -84,7 +84,7 @@ $ ./prg 2 > napake.txt
 ```c
 // zapisovanje na binarno datoteko:
 fwrite(&i, sizeof(int), 1, f);
-fwrite(&d, sizeof(double), 1, f)
+fwrite(&d, sizeof(double), 1, f);
 // man fwrite, man fread - branje iz binarne datoteke
 ```
 

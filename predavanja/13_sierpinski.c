@@ -16,14 +16,14 @@ void sierpinski(int n, bool** table, int y, int x) {
     sierpinski(n-1, table, y+side_len/2, x+side_len/2);
 }
 
-char barva(int velikost, int v, int s){
+char color(int velikost, int v, int s){
     if(velikost == 1){
         return '*';
     }
     if((v >= velikost/2) && (s < velikost/2)) {
         return '-';
     }
-    return barva(velikost/2, v % (velikost/2), s % (velikost/2));
+    return color(velikost/2, v % (velikost/2), s % (velikost/2));
 }
 
 int main(){
@@ -47,7 +47,7 @@ int main(){
 
     for(int i = 0; i < side_len; i++){
         for(int j = 0; j < side_len; j++){
-            printf("%c", barva(side_len, i, j));
+            printf("%c", color(side_len, i, j));
         }
         printf("\n");
     }

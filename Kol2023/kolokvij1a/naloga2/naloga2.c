@@ -33,37 +33,8 @@
 
 char** poStolpcih(char** nizi, int stVhodnih, int* stIzhodnih) {
     
-    int j = 0;
-    int* dolzineNizov = malloc(stVhodnih*sizeof(int));
-    int najdaljsiVhodni = 0;
-    for(int i = 0; i < stVhodnih; i++){
-        dolzineNizov[i] = strlen(nizi[i]);
-        if(dolzineNizov[i] > dolzineNizov[najdaljsiVhodni]){
-            najdaljsiVhodni = i;
-        }
-    }
-
-    printf("%d\n", dolzineNizov[najdaljsiVhodni]);
-
-    char** noviNizi = calloc(najdaljsiVhodni*stVhodnih, sizeof(char*));
-    int* indeksi = calloc(stVhodnih, sizeof(int));
-
-    int koncanih = 0;
-    while(koncanih < stVhodnih) {
-        noviNizi[j] = calloc(stVhodnih, sizeof(char));
-        for(int i = 0; i < stVhodnih; i++){
-            if(j >= dolzineNizov[i]){
-                koncanih++;
-                continue;
-            }
-
-            noviNizi[j][indeksi[j]++] = nizi[i][j];
-        }
-        j++;
-    }
-    *stIzhodnih = dolzineNizov[najdaljsiVhodni];
-
-    return noviNizi;
+    
+    
 }
 
 //=============================================================================

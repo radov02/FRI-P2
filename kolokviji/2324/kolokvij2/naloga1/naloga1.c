@@ -40,6 +40,9 @@ int main() {
     // "Ce "zelite funkcijo <nastavi> testirati brez testnih primerov,
     // dopolnite to funkcijo in prevedite datoteko na obi"cajen na"cin 
     // (gcc naloga1.c).
+
+    
+
     return 0;
 }
 

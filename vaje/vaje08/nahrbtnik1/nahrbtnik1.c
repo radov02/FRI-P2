@@ -40,7 +40,7 @@ int pridobiNajvecjoCeno(int trenutnaProstornina, int najvecjaCena, int indeks, i
 // rešitev:
 int optimalnaCena(int stPredmetov, int* prostornine, int* cene, int index, int V){  // cim manj parametrov, memoiziramo spreminjajoče argumente
 
-    if(index == stPredmetov){   // ne ustavimo se ko je prostornina < 0 ker smo takrat že dodali tisti predmet - to preverimo pred klicom
+    if(index == stPredmetov){   // ne ustavimo se ko je prostornina < 0 ker smo takrat že dodali tisti predmet - to preverimo pred klicem
         return 0;
     }
 
