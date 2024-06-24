@@ -21,7 +21,7 @@ void hanoi(char zacetni, char pomozni, char koncni, int kolut, int ignoriramo){
 
     if(kolut <= 1){
         poteza++;
-        if(koncni == 'B' && poteza > ignoriramo && kolut == 1){
+        if(koncni == 'B' && poteza > ignoriramo && kolut == 1){     // ker samo 1. in 3. štejeta za premik, 2. pa je duplikat
             printf("%d\n", poteza);
         }
         return;

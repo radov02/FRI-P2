@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -8,25 +7,28 @@
 
 int main(int argc, char** argv) {
     
-    FILE* input = fopen(argv[1], "r");
-    FILE* output = fopen(argv[2], "w");
+    FILE* vhodna = fopen(argv[1], "r");
+    FILE* izhodna = fopen(argv[2], "w");
 
-    char* temp = malloc(100000 * sizeof(char));
+    char* vrstica = malloc(100001*sizeof(char));
+    while(fgets(vrstica, 100001, vhodna) != NULL){
 
-    while (fgets(temp,100000,input)!=NULL){
-        for (int i=0; temp[i]!='\0'; i++){
-            if (i==0 && temp[i]==32){
-                while (temp[i]==32){
-                    i++;
-                }
-                i--;
-            }
-            else{
-                fprintf(output, "%c", temp[i]);
-            }
+        char trenutni = vrstica[0];
+        int i = 0;
+        while(trenutni != '\0' && trenutni == ' '){
+            trenutni = vrstica[++i];
         }
+        if(trenutni != '\0'){
+            strcpy(vrstica, &vrstica[i]);
+        }
+
+        fprintf(izhodna, "%s", vrstica);
     }
 
+    fclose(vhodna);
+    fclose(izhodna);
+
+    return 0;
 }
 
 

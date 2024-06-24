@@ -12,39 +12,36 @@
 #include <string.h>
 
 // po potrebi dopolnite ...
+
 int stNacinov = 0;
 
-void izpisiStNacinov(int n, int m){
+int izpisi(int stevilo, int m){
 
-    printf("n: %d\n", n);
-
-    if(n == 0){
+    if(stevilo == 0){
         stNacinov++;
-        printf("ret, n=%d\n", n);
-        return;
-    }
-    else if(n < 0){
-        return;
+        return 1;
     }
 
-    for(int a = 1; a < n; a++){
-        for(int b = m; b < n; b++){
-            printf("%d\n", n);
-            printf("%d %d\n", a, b);
-            if(n-a*b >= 0 && a < b){
-                izpisiStNacinov(n-a*b, m);
+    int nacinov = 0;
+    for(int b = m; b <= stevilo; b++){
+        for(int a = 1; a < b; a++){
+            if(stevilo - a*b >= 0){
+                nacinov += izpisi(stevilo - a*b, m);
             }
         }
     }
-    printf("---\n");
+
+    return nacinov;
 }
 
 int main() {
-    
+
     int n, m;
     scanf("%d %d", &n, &m);
 
-    izpisiStNacinov(n, m);
+    printf("%d\n", izpisi(n, m));
+
+    // printf("%d\n", stNacinov);
 
     return 0;
 }

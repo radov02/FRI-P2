@@ -13,8 +13,29 @@
 
 // po potrebi dopolnite ...
 
+int stNacinov(int n, int m){
+
+    if(n == 0){
+        return 1;
+    }
+
+    int nacinov = 0;
+    for(int b = m; b <= n; b++){
+        for(int a = 1; a < b; a++){
+            if(n - a*b >= 0){
+                nacinov += stNacinov(n - a*b, m);
+            }
+        }
+    }
+    return nacinov;
+}
+
 int main() {
-    // dopolnite ...
+    
+    int n, m;
+    scanf("%d %d", &n, &m);
+
+    printf("%d\n", stNacinov(n, m));
 
     return 0;
 }

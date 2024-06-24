@@ -3,6 +3,59 @@
 #include <stdlib.h>
 #include <math.h>
 
+// vrača true za pobarvano in false za nepobarvano polje
+bool sierpinski(int x, int y, int globina){
+
+    if(globina == 0){   // samo eno polje
+        return true;
+    }
+
+    int sirinaPodkvadrata = 1 << (globina - 1);
+
+    int podkvadratX = x / sirinaPodkvadrata;
+    int podkvadratY = y / sirinaPodkvadrata;
+
+    if(podkvadratX == 0 && podkvadratY == 1){   // levi spodnji podkvadrat
+        return false;
+    }
+    else{
+        return sierpinski(x % sirinaPodkvadrata, y % sirinaPodkvadrata, globina-1);
+    }
+}
+
+// HITRA VERZIJA:
+int main(){
+
+    int n, v, s, h, w;
+    scanf("%d %d %d %d %d", &n, &v, &s, &h, &w);
+
+    // izpiši število polnih celic:
+    printf("%llu\n", (long long unsigned)pow(3, n));
+
+    // za vsako polje znotraj željenega pravokotnika za izpis
+    // bomo klicali rekurzivno funkcijo, ki izračuna ali je polje polno
+    // (to izračuna glede na celoten kvadrat)
+    for(int i = 0; i < h; i++){
+        for(int j = 0; j < w; j++){
+            printf("%c", sierpinski(j+s, i+v, n) ? '*':'-');
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* // PREPOČASNO:
 void sierpinski(int n, bool** table, int y, int x) {
     if(n == 0) {
         table[y][x] = 1;
@@ -53,4 +106,4 @@ int main(){
     }
 
     return 0;
-}
+} */

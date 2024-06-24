@@ -25,14 +25,38 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 // po potrebi dopolnite ...
 
 //=============================================================================
 
 char** naSredino(char** nizi, int ciljnaDolzina) {
-    // popravite / dopolnite ...
-    return NULL;
+
+    int i = 0;
+    while(nizi[i] != NULL){
+        i++;
+    }
+    
+    char** vrniTabela = malloc((i+1)*sizeof(char*));
+    for(int j = 0; j < i; j++){
+        vrniTabela[j] = malloc(ciljnaDolzina*sizeof(char));
+        int nizijlen = strlen(nizi[j]);
+        int pik = ciljnaDolzina - nizijlen;
+
+        for(int k = 0; k < pik/2; k++){
+            vrniTabela[j][k] = '.';
+        }
+        for(int k = 0; k < nizijlen; k++){
+            vrniTabela[j][k+pik/2] = nizi[j][k];
+        }
+        for(int k = 0; k < ceil(pik/2.0); k++){     // uporabi double!!
+            vrniTabela[j][k+nizijlen+(int)ceil(pik/2)] = '.';
+        }
+    }
+    vrniTabela[i] = NULL;
+
+    return vrniTabela;
 }
 
 //=============================================================================

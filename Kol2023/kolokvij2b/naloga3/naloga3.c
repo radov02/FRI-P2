@@ -17,49 +17,48 @@
 
 // po potrebi dopolnite ...
 
-void izpis(int* pot, int indeksPot){
-    for(int i = 0; i < indeksPot; i++){
-        if(i < indeksPot-1) {
-            printf("%d->", pot[i]);
+void izpis(int* zeObiskana, int indeks){
+    for(int i = 0; i < indeks; i++){
+        if(i < indeks-1){
+            printf("%d->", zeObiskana[i]);
         }
         else{
-            printf("%d", pot[i]);
+            printf("%d", zeObiskana[i]);
         }
     }
     printf("\n");
 }
 
-bool zeObiskano(int vozlisce, int* pot, int indeksPot){
-    for(int i = 0; i < indeksPot; i++){
-        if(pot[indeksPot] == vozlisce){
+bool zeObiskano(int vozlisce, int* zeObiskana, int indeks){
+    for(int i = 0; i < indeks; i++){
+        if(vozlisce == zeObiskana[i]){
             return true;
         }
     }
     return false;
 }
 
-void izpisi(int trenutnoVozlisce, int trenutnaVsota, int* pot, int indeksPot, int** povezave, int n, int m, int K){
+void izpisi(int trenutno, int trenutnaVsota, int** povezave, int* zeObiskana, int indeks, int n, int m, int K){
 
-    if(trenutnoVozlisce == n-1){
-        pot[indeksPot++] = trenutnoVozlisce;
-        izpis(pot, indeksPot);
+    if(trenutno == n-1){
+        zeObiskana[indeks++] = trenutno;
+        izpis(zeObiskana, indeks);
         return;
     }
 
-    printf("%d\n", trenutnoVozlisce);
-    pot[indeksPot++] = trenutnoVozlisce;
+    // printf("%d\n", trenutno);
+
+    zeObiskana[indeks++] = trenutno;
 
     for(int i = 0; i < m; i++){
-        
-        if(povezave[i][0] == trenutnoVozlisce && trenutnaVsota + povezave[i][2] <= K && !zeObiskano(povezave[i][1], pot, indeksPot)){
-            izpisi(povezave[i][1], trenutnaVsota + povezave[i][2], pot, indeksPot, povezave, n, m, K);
+        if(povezave[i][0] == trenutno && trenutnaVsota + povezave[i][2] <= K && !zeObiskano(povezave[i][1], zeObiskana, indeks)){
+            izpisi(povezave[i][1], trenutnaVsota + povezave[i][2], povezave, zeObiskana, indeks, n, m, K);
         }
     }
-    printf("    %d\n", trenutnoVozlisce);
 }
 
 int main() {
-   
+
     int n, m, K;
     scanf("%d %d %d", &n, &m, &K);
     int** povezave = malloc(m*sizeof(int*));
@@ -67,9 +66,9 @@ int main() {
         povezave[i] = malloc(3*sizeof(int));
         scanf("%d %d %d", &povezave[i][0], &povezave[i][1], &povezave[i][2]);
     }
-    int* pot = calloc(n, sizeof(int));
+    int* zeObiskana = malloc(n*sizeof(int));
 
-    izpisi(0, 0, pot, 0, povezave, n, m, K);
+    izpisi(0, 0, povezave, zeObiskana, 0, n, m, K);
 
     return 0;
 }

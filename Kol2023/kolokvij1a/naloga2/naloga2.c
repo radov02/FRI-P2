@@ -33,8 +33,36 @@
 
 char** poStolpcih(char** nizi, int stVhodnih, int* stIzhodnih) {
     
+    int najdaljsiNiz = 0;
+    int* dolzineNizov = malloc(stVhodnih*sizeof(int));
+    for(int i = 0; i < stVhodnih; i++){
+        int dolzina = strlen(nizi[i]);
+        dolzineNizov[i] = dolzina;
+        if(dolzina > najdaljsiNiz){
+            najdaljsiNiz = dolzina;
+        }
+    }
+    *stIzhodnih = najdaljsiNiz;
+
+    char** vrniTabela = malloc(najdaljsiNiz*sizeof(char*));
+    int* indeksiNaIzhodnihNizih = calloc(najdaljsiNiz, sizeof(int));
+    for(int i = 0; i < najdaljsiNiz; i++){
+        vrniTabela[i] = calloc(stVhodnih, sizeof(char));
+    }
     
-    
+    int crka = 0;
+    while(crka < najdaljsiNiz){
+        
+        for(int j = 0; j < stVhodnih; j++){ // po besedah
+            if(crka < dolzineNizov[j]){
+                vrniTabela[crka][indeksiNaIzhodnihNizih[crka]++] = nizi[j][crka];
+            }
+        }
+
+        crka++;
+    }
+
+    return vrniTabela;
 }
 
 //=============================================================================

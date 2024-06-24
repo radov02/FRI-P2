@@ -4,6 +4,8 @@
 #include <string.h>
 #include <math.h>
 
+// PREPOČASNO:
+
 int polnih = 0;
 
 /* void prepisiVPolje(int memoIndeks, char** polje, int x1, int x2, int y1, int y2){
